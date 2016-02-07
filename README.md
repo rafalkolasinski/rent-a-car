@@ -1,6 +1,13 @@
-# rent-acar
+# Rent-A-Car
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.0.0-rc5.
+The Rent-A-Car project is based on MEAN Stack that contains 4 different elements - each using JavaScript to run itself:
+
+- [MongoDB](https://www.mongodb.org/) - non-relational database.
+- [ExpressJS](http://expressjs.com/) - Node framework to ease usage of server calls.
+- [AngularJS](https://angularjs.org/) - frontend JS library used to create SPA applicatons.
+- [Node](https://nodejs.org/) - server-side JS environment based on V8.
+
+Rent-A-Car app allows user to search through cars available for renting, rent selected car and use online payment handled by DotPay API to authorize and pay for car renting.
 
 ## Getting Started
 
