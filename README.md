@@ -8,6 +8,12 @@ The Rent-A-Car project is based on MEAN Stack that contains 4 different elements
 - [Node](https://nodejs.org/) - server-side JS environment based on V8.
 
 Rent-A-Car app allows user to search through cars available for renting, rent selected car and use online payment handled by DotPay API to authorize and pay for car renting.
+Signing up/Logging in is required for app's full experience.
+
+App's default credentials:
+
+1. Login: 'test@test.com', passwd: 'test'.
+2. Admin: 'admin@admin.com', passwd: 'admin'.
 
 ## Getting Started
 

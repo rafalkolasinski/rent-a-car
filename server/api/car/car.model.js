@@ -4,9 +4,15 @@ var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 var Schema = mongoose.Schema;
 
 var CarSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  brand: String,
+  model: String,
+  class: String,
+  bodyStyle: String,
+  fuelOptions: String,
+  seating: Number,
+  price: { type: Number, min: 0.01, max: 200 },
+  isBooked: Boolean,
+  isAvailable: Boolean
 });
 
 module.exports = mongoose.model('Car', CarSchema);

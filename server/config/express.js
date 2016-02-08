@@ -5,6 +5,7 @@
 'use strict';
 
 var express = require('express');
+var passport = require('passport');
 var favicon = require('serve-favicon');
 var morgan = require('morgan');
 var compression = require('compression');
@@ -26,6 +27,7 @@ module.exports = function(app) {
   app.use(bodyParser.json());
   app.use(methodOverride());
   app.use(cookieParser());
+  app.use(passport.initialize());
   app.set('appPath', path.join(config.root, 'client'));
 
   if ('production' === env) {
