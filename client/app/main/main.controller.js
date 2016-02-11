@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rentACarApp')
+angular.module('rentAcarApp')
   .controller('MainCtrl', function($scope, $http) {
     $scope.awesomeThings = [];
 

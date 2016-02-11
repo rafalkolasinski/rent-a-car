@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rentACarApp', [
+angular.module('rentAcarApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

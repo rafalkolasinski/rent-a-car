@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function() {
 
   // load the controller's module
-  beforeEach(module('rentACarApp'));
+  beforeEach(module('rentAcarApp'));
   beforeEach(module('stateMock'));
 
   var MainCtrl;

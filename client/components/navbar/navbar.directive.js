@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rentACarApp')
+angular.module('rentAcarApp')
   .directive('navbar', function () {
     return {
       templateUrl: 'components/navbar/navbar.html',

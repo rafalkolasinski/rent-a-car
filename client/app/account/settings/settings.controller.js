@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rentACarApp')
+angular.module('rentAcarApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 

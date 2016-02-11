@@ -1,0 +1,148 @@
+.sorting-container {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.car-card {
+	font-family: 'Open Sans', sans-serif;
+	min-height: 300px;
+	color: $baseGrayBlue;
+	background-color: $lightGray;
+	margin: 20px;
+	box-shadow: 0px 3px $darkGray;
+
+	&.unavailable {
+		opacity: .75;
+	}
+
+	.car-card-header {
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+		height: 80px;
+		background-color: $baseYellow;
+
+		.car-card-header-brand {
+			font-size: 24px;
+			text-transform: uppercase;
+		}
+
+		.car-card-header-model {
+			font-size: 18px;
+		}
+	}
+
+	.car-card-price {
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    -webkit-box-pack: center;
+	    -webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	    justify-content: center;
+	    height: 50px;
+	    background-color: $gray;
+
+	    .car-card-price-value {
+	    	color: $darkGray;
+	    	font-size: 26px;
+	    }
+	}
+
+	.car-card-body {
+
+		.car-details {
+			padding: 10px;
+			list-style-type: none;
+
+			.car-details-item:not(:last-child) {
+				border-bottom: 1px solid $gray;
+			}
+
+			.car-details-item {
+				padding: 10px 0px 10px 0px;
+    			margin: 0px;
+
+				.car-details-item-label {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.car-card-ui {
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+		color: $lightGray;
+		height: 50px;
+
+		.car-card-ui-container {
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    -webkit-box-align: center;
+		    -webkit-align-items: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+
+
+			.car-card-availability-label {
+				margin: 20px;
+			}
+		}
+
+		&.available {
+			font-size: 18px;
+			text-transform: uppercase;
+			background-color: $baseGreen;
+		}
+
+		&.unavailable {
+			font-size: 18px;
+			text-transform: uppercase;
+			background: -webkit-linear-gradient($lightRed, $darkRed);
+		    background: linear-gradient($lightRed, $darkRed);
+		}
+
+		.car-card-availability-icon {
+			margin: 15px;
+			font-size: 24px;
+		}
+	}
+
+}
+
+/*@media(max-width: 768px){
+	.car-card-ui {
+
+		.car-card-ui-container {
+
+			.car-card.availability-label {
+
+			}
+		}
+	}
+}*/

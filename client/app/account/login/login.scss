@@ -69,16 +69,25 @@
 }
 
 .button-register {
-	color: #666666;
+	background: none;
+	color: $lightGray;
 	border-radius: 0px;
-	border: 1px solid $mediumGray;
+	border: 1px solid $lightGray;
 	overflow: hidden;
 	cursor: pointer;
 	transition: all .25s;
 
 	&:hover {
-		color: #fff;
-		border: 1px solid $mediumGray;
-		background-color: $mediumGray;
+		color: $baseGrayBlue;
+		border: 1px solid $lightGray;
+		background-color: $lightGray;
 	}
+}
+
+.form-control {
+    border-radius: 0 !important;
+    height: 40px;
+    color: #263238;
+    font-size: 16px;
+    border: 0 !important;
 }

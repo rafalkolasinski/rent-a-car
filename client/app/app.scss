@@ -5,9 +5,19 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 * Official colours
 */
 
+$baseYellow:	#fdd835;
+$baseGrayBlue:	#263238;
 $greenGo:		#58BF1A;
 $lightGray: 	#f1f1f1;
 $mediumGray:	#666666;
+$darkGray: 		#212121;
+$gray:			#ABABAB;
+
+$lightRed:		#ff3844;
+$darkRed:		#e62531;
+$lightGreen:	#73ca39;
+$darkGreen:		#6eb93b;
+$baseGreen:		#1dcb8b;
 
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import '../bower_components/font-awesome/scss/font-awesome';
@@ -18,7 +28,7 @@ $mediumGray:	#666666;
 
 @font-face {
 	font-family: 'Glyphicons Halflings';
-	src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
+	src: url('../bower_components/bootstrap/fonts/');
 	src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
 	url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
 	url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
@@ -44,6 +54,13 @@ $mediumGray:	#666666;
  * App-wide Styles
  */
 
+body {
+	background-color: $baseGrayBlue;
+	color: #f1f1f1;
+}
+
+
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -61,7 +78,9 @@ $mediumGray:	#666666;
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
+@import 'cars/cars.scss';
 @import 'main/main.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
+@import '../components/navbar/navbar.scss';
 // endinjector

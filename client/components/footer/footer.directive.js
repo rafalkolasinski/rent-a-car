@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rentACarApp')
+angular.module('rentAcarApp')
   .directive('footer', function () {
     return {
       templateUrl: 'components/footer/footer.html',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rentACarApp')
+angular.module('rentAcarApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main', {

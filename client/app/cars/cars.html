@@ -1,0 +1,69 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="col-md-12">
+	Header of some sort.
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-sx-12">
+			<div class="sorting-container">
+				<div>Sort by:</div>
+				<div ng-click="sortingAttribute = 'isAvailable'">Availability</div>
+				<div ng-click="sortingAttribute = 'price'">Price</div>
+				<div ng-click="sortingAttribute = 'brand'">Brand</div>
+				<div ng-click="sortingAttribute = 'model'">Model</div>
+				<div ng-click="sortingAttribute = 'bodyStyle'">Body style</div>
+				<div ng-click="sortingAttribute = 'class'">Class</div>
+				<div ng-click="sortingAttribute = 'fuelOptions'">Fuel options</div>
+				<div ng-click="sortingAttribute = 'seating'">Seating</div>
+			</div>
+		</div>
+		<div ng-repeat="car in cars | orderObjectBy:sortingAttribute" class="col-md-3 col-sm-12 col-xs-12">
+			<div class="car-card" ng-class="{unavailable: !car.isAvailable}">
+				<!--car header-->
+				<div class="car-card-header">
+					<div class="car-card-header-brand">{{ car.brand }}</div>
+					<div class="car-card-header-model">{{ car.model }}</div>
+				</div>
+
+				<!--car price-->
+				<div class="car-card-price">
+					<div class="car-card-price-value">${{ car.price }}</div>
+				</div>
+
+				<!--car details-->
+				<div class="car-card-body">
+					<ul class="car-details">
+						<li class="car-details-item">
+							<span class="car-details-item-label">Body style:&nbsp;</span>
+							<span>{{ car.bodyStyle }}</span>
+						</li>
+						<li class="car-details-item">
+							<span class="car-details-item-label">Class:&nbsp;</span>
+							<span>{{ car.class }}</span></li>
+						<li class="car-details-item">
+							<span class="car-details-item-label">Fuel options:&nbsp;</span>
+							<span>{{ car.fuelOptions }}</span>
+						</li>
+						<li class="car-details-item">
+							<span class="car-details-item-label">Seating:&nbsp;</span>
+							<span>{{ car.seating }}</span>
+						</li>
+					</ul>
+				</div>
+
+				<!--car ui panel-->
+				<div class="car-card-ui" ng-class="{available: car.isAvailable, unavailable: !car.isAvailable}">
+					<div class="car-card-ui-container" ng-if="car.isAvailable">
+						<span class="car-card-availability-icon"><i class="glyphicon glyphicon-plus"></i></span>
+						<span class="car-card-availability-label">Available</span>
+					</div>
+					<div class="car-card-ui-container" ng-if="!car.isAvailable">
+						<span class="car-card-availability-icon"><i class="glyphicon glyphicon-remove"></i></span>
+						<span class="car-card-availability-label">Not Available</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div ng-include="'components/footer/footer.html'"></div> -->

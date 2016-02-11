@@ -1,0 +1,116 @@
+.app-navbar {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	background: none !important;
+	color: #f1f1f1;
+	border-bottom: none;
+
+	.app-navbar-items {
+		> li {
+			margin: 15px;
+			border-bottom: 2px solid transparent;
+
+			> a {
+				color: $lightGray;
+
+				&:focus {
+					color: inherit;
+				}
+
+				&:active {
+					color: $baseYellow;
+				}
+			}
+
+			&:hover {
+				color: $baseYellow;
+				border-bottom: 2px solid $baseYellow;
+
+				> a {
+					color: $baseYellow;
+				}
+			}
+		}
+	}
+
+	.navbar-toggle {
+		padding: 10px !important;
+		border: 0;
+
+		&:focus {
+			background: none;
+		}
+
+		&:active,
+		&:hover {
+			border-radius: 0;
+			background-color: $baseYellow;
+		}
+	}
+
+	.app-navbar-brand {
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    color: #f1f1f1;
+	    margin: 15px;
+
+	    &:hover {
+	    	color: $baseYellow;
+	    }
+
+	    .app-navbar-brand-icon {
+	    	font-size: 42px;
+	    }
+	}
+
+	.activeButton {
+		border-bottom: 2px solid $baseYellow;
+		color: $baseYellow;
+	}
+
+	.actveButtonSignup {
+		background-color: $baseYellow;
+	}
+}
+
+@media(max-width: 768px) {
+	.navbar-header {
+		border-bottom: 1px solid $lightGray;
+	}
+	.navbar-collapse {
+		border: 0;
+		border-bottom: 1px solid $lightGray;
+	}
+
+	.app-navbar {
+		display: inline;
+		text-align: center;
+	}
+}
+
+@media(min-width: 768px) {
+	.app-navbar-items {
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	}
+}
