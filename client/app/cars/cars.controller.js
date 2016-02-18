@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('rentAcarApp')
-  .controller('CarsCtrl', function ($scope, $http) {
+  .controller('CarsCtrl', ['$scope', '$http', function ($scope, $http) {
   	$scope.sortingAttribute = '';
+  	$scope.sortingReverse = true;
 
   	$scope.init = function(){
   		$scope.getCarsList();
@@ -19,5 +20,10 @@ angular.module('rentAcarApp')
 	    });
   	}
 
+  	$scope.sortingOrder = function(sortingAttribute) {
+  		$scope.sortingReverse = ($scope.sortingAttribute === sortingAttribute) ? !$scope.sortingReverse : false;
+  		$scope.sortingAttribute = sortingAttribute;
+  	}
+
   	$scope.init();
-  });
+  }]);

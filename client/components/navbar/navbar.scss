@@ -1,4 +1,8 @@
 .app-navbar {
+	background: $baseGreen;
+	border: 0;
+	
+	.app-navbar-container {
 	display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -10,7 +14,6 @@
 	font-size: 18px;
 	font-family: 'Open Sans', sans-serif;
 	background: none !important;
-	color: #f1f1f1;
 	border-bottom: none;
 
 	.app-navbar-items {
@@ -82,8 +85,9 @@
 		color: $baseYellow;
 	}
 
-	.actveButtonSignup {
+	.activeButtonSignup {
 		background-color: $baseYellow;
+	}
 	}
 }
 

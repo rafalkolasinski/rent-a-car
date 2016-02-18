@@ -6,18 +6,18 @@
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-sx-12">
 			<div class="sorting-container">
-				<div>Sort by:</div>
-				<div ng-click="sortingAttribute = 'isAvailable'">Availability</div>
-				<div ng-click="sortingAttribute = 'price'">Price</div>
-				<div ng-click="sortingAttribute = 'brand'">Brand</div>
-				<div ng-click="sortingAttribute = 'model'">Model</div>
-				<div ng-click="sortingAttribute = 'bodyStyle'">Body style</div>
-				<div ng-click="sortingAttribute = 'class'">Class</div>
-				<div ng-click="sortingAttribute = 'fuelOptions'">Fuel options</div>
-				<div ng-click="sortingAttribute = 'seating'">Seating</div>
+				<div>Sorting options</div>
+				<div ng-click="sortingOrder('isAvailable')">Availability</div>
+				<div ng-click="sortingOrder('price')">Price</div>
+				<div ng-click="sortingOrder('brand')">Brand</div>
+				<div ng-click="sortingOrder('model')">Model</div>
+				<div ng-click="sortingOrder('bodyStyle')">Body style</div>
+				<div ng-click="sortingOrder('class')">Class</div>
+				<div ng-click="sortingOrder('fuelOptions')">Fuel options</div>
+				<div ng-click="sortingOrder('seating')">Seating</div>
 			</div>
 		</div>
-		<div ng-repeat="car in cars | orderObjectBy:sortingAttribute" class="col-md-3 col-sm-12 col-xs-12">
+		<div ng-repeat="car in cars | orderBy:sortingAttribute:sortingReverse" class="col-md-3 col-sm-12 col-xs-12">
 			<div class="car-card" ng-class="{unavailable: !car.isAvailable}">
 				<!--car header-->
 				<div class="car-card-header">
@@ -53,13 +53,20 @@
 
 				<!--car ui panel-->
 				<div class="car-card-ui" ng-class="{available: car.isAvailable, unavailable: !car.isAvailable}">
-					<div class="car-card-ui-container" ng-if="car.isAvailable">
+					<div class="car-card-ui-container" ng-if="car.isAvailable" ng-click="showDetails($event)">
 						<span class="car-card-availability-icon"><i class="glyphicon glyphicon-plus"></i></span>
 						<span class="car-card-availability-label">Available</span>
 					</div>
 					<div class="car-card-ui-container" ng-if="!car.isAvailable">
 						<span class="car-card-availability-icon"><i class="glyphicon glyphicon-remove"></i></span>
 						<span class="car-card-availability-label">Not Available</span>
+					</div>
+				</div>
+
+				<!--car card back w/ renting details-->
+				<div class="car-card-back">
+					<div class="">
+						
 					</div>
 				</div>
 			</div>
