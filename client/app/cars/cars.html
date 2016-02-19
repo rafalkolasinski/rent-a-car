@@ -1,23 +1,74 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div class="col-md-12">
-	Header of some sort.
-</div>
+
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 col-sm-12 col-sx-12">
-			<div class="sorting-container">
-				<div>Sorting options</div>
-				<div ng-click="sortingOrder('isAvailable')">Availability</div>
-				<div ng-click="sortingOrder('price')">Price</div>
-				<div ng-click="sortingOrder('brand')">Brand</div>
-				<div ng-click="sortingOrder('model')">Model</div>
-				<div ng-click="sortingOrder('bodyStyle')">Body style</div>
-				<div ng-click="sortingOrder('class')">Class</div>
-				<div ng-click="sortingOrder('fuelOptions')">Fuel options</div>
-				<div ng-click="sortingOrder('seating')">Seating</div>
+
+		<!-- sorting panel -->
+		<div>
+			<md-menu>
+				<md-button ng-click="openSortingMenu($mdOpenMenu, $event)">
+					Sorting options
+				</md-button>
+				<md-menu-content width="4">
+					<md-menu-item>
+						<md-button ng-click="sortingOrder('isAvailable')">
+							<div>Availability</div>
+						</md-button>
+					</md-menu-item>
+					<md-menu-item>
+						<md-button ng-click="sortingOrder('price')">
+							<div>Price</div>
+						</md-button>
+					</md-menu-item>
+					<md-menu-item>
+						<md-button ng-click="sortingOrder('brand')">
+							<div>Brand</div>
+						</md-button>
+					</md-menu-item>
+					<md-menu-item>
+						<md-button ng-click="sortingOrder('model')">
+							<div>Model</div>
+						</md-button>
+					</md-menu-item>
+					<md-menu-item>
+						<md-button ng-click="sortingOrder('bodyStyle')">
+							<div>Body style</div>
+						</md-button>
+					</md-menu-item>
+					<md-menu-item>
+						<md-button ng-click="sortingOrder('class')">
+							<div>Class</div>
+						</md-button>
+					</md-menu-item>
+					<md-menu-item>
+						<md-button ng-click="sortingOrder('fuelOptions')">
+							<div>Fuel options</div>
+						</md-button>
+					</md-menu-item>
+					<md-menu-item>
+					<md-button ng-click="sortingOrder('seating')">
+							<div>Seating</div>
+						</md-button>
+					</md-menu-item>
+				</md-menu-content>
+			</md-menu>
+		</div>
+
+		<!-- searching panel -->
+		<md-input-container class="md-block account-container">
+            <label>Search for keywords</label>
+            <input type="text" class="form-control account-input" ng-model="keywords">
+    	</md-input-container>
+
+		<!-- login monit -->
+		<div class="col-md-12 col-sm-12 col-sx-12" ng-if="!isLoggedIn">
+			<div class="login-monit">
+				Warning! You must be logged in to rent available cars. 
 			</div>
 		</div>
-		<div ng-repeat="car in cars | orderBy:sortingAttribute:sortingReverse" class="col-md-3 col-sm-12 col-xs-12">
+
+		<!-- car list -->
+		<div ng-repeat="car in cars | orderBy:sortingAttribute:sortingReverse | filter:keywords" class="col-md-3 col-sm-12 col-xs-12">
 			<div class="car-card" ng-class="{unavailable: !car.isAvailable}">
 				<!--car header-->
 				<div class="car-card-header">
@@ -52,8 +103,8 @@
 				</div>
 
 				<!--car ui panel-->
-				<div class="car-card-ui" ng-class="{available: car.isAvailable, unavailable: !car.isAvailable}">
-					<div class="car-card-ui-container" ng-if="car.isAvailable" ng-click="showDetails($event)">
+				<div class="car-card-ui" ng-class="{available: car.isAvailable, unavailable: !car.isAvailable, disabled: !isLoggedIn}" ng-mouseenter="liftCard($event)" ng-mouseleave="lowerCard($event)" ng-click="showDetails($event)">
+					<div class="car-card-ui-container" ng-if="car.isAvailable">
 						<span class="car-card-availability-icon"><i class="glyphicon glyphicon-plus"></i></span>
 						<span class="car-card-availability-label">Available</span>
 					</div>
@@ -65,7 +116,12 @@
 
 				<!--car card back w/ renting details-->
 				<div class="car-card-back">
-					<div class="">
+					<div class="back-button" ng-click="hideDetails($event)">
+						<div class="back-button-container">
+							<i class="glyphicon glyphicon-remove"></i>
+						</div>
+					</div>
+					<div class="back-details">
 						
 					</div>
 				</div>
@@ -73,4 +129,5 @@
 		</div>
 	</div>
 </div>
-<!-- <div ng-include="'components/footer/footer.html'"></div> -->
+
+<div ng-include="'components/footer/footer.html'"></div>

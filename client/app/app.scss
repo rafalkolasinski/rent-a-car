@@ -60,8 +60,6 @@ body {
 	color: #f1f1f1;
 }
 
-
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -79,6 +77,7 @@ body {
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
+@import 'account/signup/signup.scss';
 @import 'cars/cars.scss';
 @import 'main/main.scss';
 @import '../components/footer/footer.scss';

@@ -30,7 +30,7 @@
           <a href="/login">Login</a>
         </li>
         <li ng-show="isLoggedIn()">
-          <p class="navbar-text">Hello {{ getCurrentUser().name }}</p>
+          <p class="navbar-text">Hello, {{ getCurrentUser().name }}!</p>
         </li>
         <li ng-show="isLoggedIn()" ng-class="{activeButton: isActive('/settings')}">
           <a href="/settings">

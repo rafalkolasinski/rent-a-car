@@ -1,3 +1,13 @@
+.login-info-container {
+	margin: 20px;
+	font-size: 16px;
+
+	.account-header-detail {
+		color: $baseGreen;
+		font-style: italic;
+	}
+}
+
 .button-login {
     margin-right: 10px;
     padding: 10px 30px 10px 30px;
@@ -5,7 +15,7 @@
 	vertical-align: middle;
 	position: relative;
 	border-radius: 0px;
-	background-color: $greenGo;
+	background-color: $baseGreen;
 	color: $lightGray;
 	overflow: hidden;
 	cursor: pointer;

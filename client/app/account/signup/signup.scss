@@ -1,0 +1,35 @@
+.account-header {
+	margin: 10px 0px 20px 0px;
+}
+
+.account-form {
+
+	.account-container {
+
+		.account-input {
+			width: 100%;
+			border-bottom: 2px solid $lightGray !important;
+			color: $lightGray;
+			font-size: 16px;
+	
+			&:active,
+			&:focus {
+				border-bottom: 2px solid $baseGreen !important;
+				box-shadow: none;
+
+				label {
+					color: $baseGreen !important;
+				}
+			}
+		}
+		
+		label {
+			font-size: 20px;
+			color: $lightGray !important;
+		}
+	}
+	
+	.error-message {
+		color: $baseYellow !important;
+	}
+}

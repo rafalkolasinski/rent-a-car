@@ -2,58 +2,49 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>Sign up</h1>
+    <div class="col-sm-12 login-info-container">
+      <h1 class="account-header">Sign up</h1>
     </div>
     <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="register(form)" novalidate>
+      <form name="form" class="account-form" ng-submit="register(form)" novalidate>
 
-        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
-          <label>Name</label>
+        <!-- name input -->
+        <md-input-container class="md-block account-container" ng-class="{ 'has-success': form.name.$valid && submitted, 'has-error': form.name.$invalid && submitted }">
+            <label>Name</label>
+            <input type="text" name="name" class="account-input" ng-model="user.name" required/>
+            <p class="help-block error-message" ng-show="form.name.$error.required && submitted">
+              A name is required.
+            </p>
+        </md-input-container>
 
-          <input type="text" name="name" class="form-control" ng-model="user.name"
-                 required/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">
-            A name is required
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
-                                            'has-error': form.email.$invalid && submitted }">
+        <!-- email input -->
+        <md-input-container class="md-block account-container" ng-class="{ 'has-success': form.email.$valid && submitted, 'has-error': form.email.$invalid && submitted }">
           <label>Email</label>
-
-          <input type="email" name="email" class="form-control" ng-model="user.email"
-                 required
-                 mongoose-error/>
+          <input type="email" name="email" class="form-control account-input" ng-model="user.email" required mongoose-error/>
           <p class="help-block" ng-show="form.email.$error.email && submitted">
             Doesn't look like a valid email.
           </p>
-          <p class="help-block" ng-show="form.email.$error.required && submitted">
-            What's your email address?
+          <p class="help-block error-message" ng-show="form.email.$error.required && submitted">
+            An email address is required.
           </p>
-          <p class="help-block" ng-show="form.email.$error.mongoose">
+          <p class="help-block error-message" ng-show="form.email.$error.mongoose">
             {{ errors.email }}
           </p>
-        </div>
+        </md-input-container>
 
-        <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
-                                            'has-error': form.password.$invalid && submitted }">
+        <!-- password input -->
+        <md-input-container class="md-block account-container" ng-class="{ 'has-success': form.password.$valid && submitted, 'has-error': form.password.$invalid && submitted }">
           <label>Password</label>
-
-          <input type="password" name="password" class="form-control" ng-model="user.password"
-                 ng-minlength="3"
-                 required
-                 mongoose-error/>
-          <p class="help-block"
-             ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+          <input type="password" name="password" class="form-control account-input" ng-model="user.password" ng-minlength="3" required mongoose-error/>
+          <p class="help-block error-message" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
             Password must be at least 3 characters.
           </p>
-          <p class="help-block" ng-show="form.password.$error.mongoose">
+          <p class="help-block error-message" ng-show="form.password.$error.mongoose">
             {{ errors.password }}
           </p>
-        </div>
+        </md-input-container>
 
+        <!-- submit buttons -->
         <div>
           <button class="btn btn-inverse btn-lg btn-login button-login" type="submit">
             <div class="button-label">Sign up</div>
@@ -66,5 +57,6 @@
       </form>
     </div>
   </div>
-  <hr>
 </div>
+
+<div ng-include="'components/footer/footer.html'"></div>

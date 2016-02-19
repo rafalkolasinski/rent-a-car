@@ -1,7 +1,58 @@
-.sorting-container {
-    font-size: 16px;
+md-menu-content {
+	max-height: none !important;
+	min-height: 400px;
+
+	.md-button > div {
+		color: $darkGray;
+	}
+}
+
+.account-container {
+
+	.account-input {
+		margin: 20px;
+		width: 100%;
+		border-bottom: 2px solid $lightGray !important;
+		color: $lightGray;
+		font-size: 16px;
+
+		&:active,
+		&:focus {
+			border-bottom: 2px solid $baseGreen !important;
+			box-shadow: none;
+		}
+
+		&.md-input-focused {
+			
+			label {
+				color: $baseGreen !important;
+			}
+		}
+	}
+	
+	label {
+		margin: 0px 20px;
+		font-size: 16px;
+		color: $lightGray !important;
+	}
+}
+
+.login-monit {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+	margin: 20px;
+	padding: 10px;
+	background: $baseRed;
 }
 
 .car-card {
@@ -75,6 +126,7 @@
 
 		.car-details {
 			padding: 10px;
+			margin: 0;
 			list-style-type: none;
 
 			.car-details-item:not(:last-child) {
@@ -103,6 +155,7 @@
 	    align-items: center;
 		color: $lightGray;
 		height: 50px;
+		cursor: pointer;
 
 		.car-card-ui-container {
 			display: -webkit-box;
@@ -118,6 +171,16 @@
 			.car-card-availability-label {
 				margin: 20px;
 			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+		
+		&.disabled {
+			background-color: $gray !important;
+			color: $darkGray;
+			cursor: auto;
 		}
 
 		&.available {
@@ -148,6 +211,34 @@
 		height: 100%;
 		width: 100%;
 		background-color: $lightGray;
+
+		.back-button {
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+		    -webkit-box-align: center;
+		    -webkit-align-items: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		    background-color: $baseYellow;
+		    color: $darkGray;
+		    font-size: 20px;
+		    height: 40px;
+		    cursor: pointer;
+
+			&:focus {
+				outline: none;
+			}
+
+			.back-button-container {
+				display: -webkit-box;
+			    display: -webkit-flex;
+			    display: -ms-flexbox;
+			    display: flex;
+				margin: 15px;
+			}
+		}
 	}
 
 }
