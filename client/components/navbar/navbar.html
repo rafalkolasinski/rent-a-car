@@ -11,8 +11,8 @@
     </div>
     <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
-        <li ng-repeat="item in menu" ng-class="{activeButton: isActive(item.link)}" class="app-navbar-items">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
+        <li ng-show="isAdmin()" ng-class="{activeButton: isActive('/admin')}">
+          <a href="/main">Home</a>
         </li>
         <li ng-show="isAdmin()" ng-class="{activeButton: isActive('/admin')}">
           <a href="/admin">Admin</a>

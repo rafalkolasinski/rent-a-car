@@ -67,6 +67,17 @@
 			</div>
 		</div>
 
+		<!-- discount info -->
+		<div class="col-md-12 col-sm-12 col-sx-12" ng-if="isLoggedIn">
+			<div class="discount-monit">
+				<span>You get&nbsp;</span>
+				<span class="discount-info">10%&nbsp;</span>
+				<span>discount if your rent time is 7 days or more, or&nbsp;</span>
+				<span class="discount-info">20%&nbsp;</span>
+				<span>discount if you've rented 3 cars in the last month. The discounts <span class="discount-info-warn">don't</span> stack up.</span>
+			</div>
+		</div>
+
 		<!-- car list -->
 		<div ng-repeat="car in cars | orderBy:sortingAttribute:sortingReverse | filter:keywords" class="col-md-3 col-sm-12 col-xs-12">
 			<div class="car-card" ng-class="{unavailable: !car.isAvailable}">
@@ -122,7 +133,25 @@
 						</div>
 					</div>
 					<div class="back-details">
-						
+						<div class="date-picker-container">
+							<input date-range-picker class="date-picker" type="text" ng-model="datePicker.dateRange" placeholder="Choose time range">
+						</div>
+						<div class="days-container">
+							<span class="days-number">{{datePicker.days}}</span>
+							<span class="days-label">days</span>
+						</div>
+						<div class="total-amount-container">
+							<span class="total-amount-value">$20</span>
+							<span class="total-amount-label">total</span>
+						</div>
+						<div class="discount-container" ng-if="discount !== 0">
+							<span class="discount-value">{{discount*100}}%</span>
+							<span>&nbsp;discount</span>
+						</div>
+						<md-button class="rent-button" ng-click="rentCar($event)">
+							<div class="rent-button-icon"><i class="fa fa-usd"></i></div>
+							<span class="rent-button-label">Rent</span>
+						</md-button>
 					</div>
 				</div>
 			</div>

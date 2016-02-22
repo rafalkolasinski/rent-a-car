@@ -8,12 +8,30 @@
     <div class="col-sm-12">
       <form name="form" class="account-form" ng-submit="register(form)" novalidate>
 
+        <!-- first name -->
+        <md-input-container class="md-block account-container" ng-class="{ 'has-success': form.name.$valid && submitted, 'has-error': form.name.$invalid && submitted }">
+            <label>First name</label>
+            <input type="text" name="firstName" class="account-input" ng-model="user.firstName" required/>
+            <p class="help-block error-message" ng-show="form.name.$error.required && submitted">
+              First name is required.
+            </p>
+        </md-input-container>
+
+        <!-- last name input -->
+        <md-input-container class="md-block account-container" ng-class="{ 'has-success': form.name.$valid && submitted, 'has-error': form.name.$invalid && submitted }">
+            <label>Last name</label>
+            <input type="text" name="lastName" class="account-input" ng-model="user.lastName" required/>
+            <p class="help-block error-message" ng-show="form.name.$error.required && submitted">
+              Last name is required.
+            </p>
+        </md-input-container>
+
         <!-- name input -->
         <md-input-container class="md-block account-container" ng-class="{ 'has-success': form.name.$valid && submitted, 'has-error': form.name.$invalid && submitted }">
-            <label>Name</label>
+            <label>Nickname</label>
             <input type="text" name="name" class="account-input" ng-model="user.name" required/>
             <p class="help-block error-message" ng-show="form.name.$error.required && submitted">
-              A name is required.
+              A nickname is required.
             </p>
         </md-input-container>
 

@@ -5,13 +5,31 @@ angular.module('rentAcarApp')
   	$scope.sortingAttribute = '';
   	$scope.sortingReverse = true;
   	$scope.isLoggedIn = false;
+  	$scope.userData = {};
+  	$scope.datePicker = {
+  		days: 0,
+  		dateRange: {
+  			startDate: null,
+  			endDate: null
+  		}
+  	};
+  	$scope.totalValue = 0;
+  	$scope.discount = 0;
   	var originatorEv;
 
+  	/* main initialization method
+  	-----------------------------------------------------*/
   	$scope.init = function(){
   		$scope.getCarsList();
   		$scope.checkUserStatus();
+  		if($scope.isLoggedIn){
+  			$scope.userData = Auth.getCurrentUser();
+  			console.log("Logged user data: " + JSON.stringify($scope.userData));
+  		}
   	}
 
+  	/* ux methods
+  	-----------------------------------------------------*/
   	$scope.checkUserStatus = function() {
   		if(Auth.isLoggedIn()) {
   			$scope.isLoggedIn = true;
@@ -40,6 +58,34 @@ angular.module('rentAcarApp')
 	    });
   	}
 
+  	$scope.rentCar = function(event) {
+  		var target = event.target;
+  		var targetData = angular.element(event.target).scope().car;
+
+  		console.log($scope.datePicker);
+  		console.log("Is booked before locking: " + targetData.isBooked);
+  		
+  		if(!targetData.isBooked){
+  			targetData.isBooked = true;
+  			$(target).closest(".car-card").find(".car-card-ui").css("background-color", "#FDD835");
+  			$(target).closest(".car-card").find(".car-card-ui").css("color", "#121212");
+  			$(target).closest(".car-card").find(".car-card-availability-label").text("Booked");
+
+  			
+  			console.log("Is locked: " + targetData.isBooked);
+
+  			setTimeout(function(){
+  				targetData.isBooked = false;
+  				$(target).closest(".car-card").find(".car-card-ui").css("background-color", "#FDD835");
+	  			$(target).closest(".car-card").find(".car-card-ui").css("color", "#121212");
+	  			$(target).closest(".car-card").find(".car-card-availability-label").text("Booked");
+  				console.log("Is booked: " + targetData.isBooked);
+  			}, 3000);
+  		}
+  	}
+
+  	/* ui methods
+  	-----------------------------------------------------*/
   	$scope.liftCard = function(event){
   		var target = event.target;
 
@@ -76,6 +122,7 @@ angular.module('rentAcarApp')
 
   	$scope.showDetails = function(event){
   		var target = event.target;
+  		console.log("Selected car data: " + JSON.stringify(angular.element(target).scope().car));
 
   		if($scope.isLoggedIn){
 	  		$(target).closest(".car-card").find(".car-card-back").velocity(
@@ -87,6 +134,10 @@ angular.module('rentAcarApp')
 					easing: 'easeInOutQuart'
 				}
 			);
+
+			if($scope.userData.monthlyRentCounter >= 3){
+				$scope.discount = .2;
+			}
   		}
   	}
 
@@ -112,5 +163,21 @@ angular.module('rentAcarApp')
   		}
   	}
 
+	/* watches
+  	-----------------------------------------------------*/
+  	$scope.$watch('datePicker.dateRange', function(newValue, oldValue){
+  		if(newValue !== oldValue){
+	  		$scope.datePicker.days = newValue.endDate.diff(newValue.startDate, 'days');
+
+	  		if($scope.datePicker.days >= 7 && $scope.userData.monthlyRentCounter < 3) {
+	  			$scope.discount = .1;
+	  		} else {
+	  			$scope.discount = 0;
+	  		}
+  		}
+  	}, true);
+
+	/* calling the initialization method
+  	-----------------------------------------------------*/
   	$scope.init();
   }]);

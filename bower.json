@@ -16,7 +16,9 @@
     "angular-ui-router": "~0.2.15",
     "jquery-ui": "^1.11.4",
     "velocity": "^1.2.3",
-    "angular-material": "^1.0.5"
+    "angular-material": "^1.0.5",
+    "angular-daterangepicker": "^0.2.2",
+    "moment": "^2.11.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

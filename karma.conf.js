@@ -27,6 +27,9 @@ module.exports = function(config) {
       'client/bower_components/angular-aria/angular-aria.js',
       'client/bower_components/angular-messages/angular-messages.js',
       'client/bower_components/angular-material/angular-material.js',
+      'client/bower_components/moment/moment.js',
+      'client/bower_components/bootstrap-daterangepicker/daterangepicker.js',
+      'client/bower_components/angular-daterangepicker/js/angular-daterangepicker.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',

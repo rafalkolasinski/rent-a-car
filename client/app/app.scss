@@ -6,22 +6,69 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 */
 
 $baseYellow:	#fdd835;
-$baseGrayBlue:	#263238;
-$greenGo:		#58BF1A;
-$lightGray: 	#f1f1f1;
-$mediumGray:	#666666;
-$darkGray: 		#121212;
-$gray:			#ABABAB;
 
+$darkGray: 		#121212;
+$mediumGray:	#666666;
+$lightGray: 	#f1f1f1;
+$gray:			#ABABAB;
+$baseGrayBlue:	#263238;
+
+$baseRed:		#E23E3D;
 $lightRed:		#ff3844;
 $darkRed:		#e62531;
-$baseRed:		#E23E3D;
-$lightGreen:	#73ca39;
-$darkGreen:		#6eb93b;
+
 $baseGreen:		#1dcb8b;
+$darkGreen:		#6eb93b;
+$lightGreen:	#73ca39;
+$greenGo:		#58BF1A;
+
+
+/**
+* Custom fonts
+*/
 
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import '../bower_components/font-awesome/scss/font-awesome';
+
+/**
+* Mixins
+*/
+
+@mixin flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin align-center {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+@mixin align-baseline {
+	-webkit-box-align: baseline;
+	-webkit-align-items: baseline;
+	-ms-flex-align: baseline;
+	align-items: baseline;
+}
+
+@mixin justify-center {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+@mixin direction-column {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
 
 /**
  * Bootstrap Fonts

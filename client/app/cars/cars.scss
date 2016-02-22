@@ -7,6 +7,10 @@ md-menu-content {
 	}
 }
 
+.daterangepicker {
+	color: #121212;
+}
+
 .account-container {
 
 	.account-input {
@@ -38,21 +42,30 @@ md-menu-content {
 }
 
 .login-monit {
-	display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+	@include flex;
+	@include align-center;
+	@include justify-center;
 	margin: 20px;
 	padding: 10px;
 	background: $baseRed;
+}
+
+.discount-monit {
+	@include flex;
+	@include align-center;
+	@include justify-center;
+	margin: 20px;
+	padding: 10px;
+	background: $lightGray;
+	color: $darkGray;
+
+	.discount-info {
+		color: $baseGreen;
+	}
+
+	.discount-info-warn {
+		color: $baseRed;
+	}
 }
 
 .car-card {
@@ -70,23 +83,10 @@ md-menu-content {
 	}
 
 	.car-card-header {
-		display: -webkit-box;
-	    display: -webkit-flex;
-	    display: -ms-flexbox;
-	    display: flex;
-	    -webkit-box-align: center;
-	    -webkit-align-items: center;
-	    -ms-flex-align: center;
-	    align-items: center;
-	    -webkit-box-pack: center;
-	    -webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	    justify-content: center;
-	    -webkit-box-orient: vertical;
-	    -webkit-box-direction: normal;
-	    -webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	    flex-direction: column;
+		@include flex;
+		@include align-center;
+		@include justify-center;
+		@include direction-column;
 		height: 80px;
 		background-color: $baseYellow;
 
@@ -101,25 +101,16 @@ md-menu-content {
 	}
 
 	.car-card-price {
-		display: -webkit-box;
-	    display: -webkit-flex;
-	    display: -ms-flexbox;
-	    display: flex;
-	    -webkit-box-align: center;
-	    -webkit-align-items: center;
-	    -ms-flex-align: center;
-	    align-items: center;
-	    -webkit-box-pack: center;
-	    -webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	    justify-content: center;
-	    height: 50px;
-	    background-color: $gray;
+		@include flex;
+		@include align-center;
+		@include justify-center;
+		height: 50px;
+		background-color: $gray;
 
-	    .car-card-price-value {
-	    	color: $darkGray;
-	    	font-size: 26px;
-	    }
+		.car-card-price-value {
+			color: $darkGray;
+			font-size: 26px;
+		}
 	}
 
 	.car-card-body {
@@ -135,7 +126,7 @@ md-menu-content {
 
 			.car-details-item {
 				padding: 10px 0px 10px 0px;
-    			margin: 0px;
+				margin: 0px;
 
 				.car-details-item-label {
 					font-weight: bold;
@@ -145,28 +136,15 @@ md-menu-content {
 	}
 
 	.car-card-ui {
-		display: -webkit-box;
-	    display: -webkit-flex;
-	    display: -ms-flexbox;
-	    display: flex;
-	    -webkit-box-align: center;
-	    -webkit-align-items: center;
-	    -ms-flex-align: center;
-	    align-items: center;
+		@include flex;
+		@include align-center;
 		color: $lightGray;
 		height: 50px;
 		cursor: pointer;
 
 		.car-card-ui-container {
-			display: -webkit-box;
-		    display: -webkit-flex;
-		    display: -ms-flexbox;
-		    display: flex;
-		    -webkit-box-align: center;
-		    -webkit-align-items: center;
-		    -ms-flex-align: center;
-		    align-items: center;
-
+			@include flex;
+			@include align-center;
 
 			.car-card-availability-label {
 				margin: 20px;
@@ -185,9 +163,9 @@ md-menu-content {
 
 		&.available {
 			-webkit-user-select: none;
-		    -moz-user-select: none;
-		    -ms-user-select: none;
-		    user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 			font-size: 18px;
 			text-transform: uppercase;
 			background-color: $baseGreen;
@@ -213,19 +191,13 @@ md-menu-content {
 		background-color: $lightGray;
 
 		.back-button {
-			display: -webkit-box;
-		    display: -webkit-flex;
-		    display: -ms-flexbox;
-		    display: flex;
-		    -webkit-box-align: center;
-		    -webkit-align-items: center;
-		    -ms-flex-align: center;
-		    align-items: center;
-		    background-color: $baseYellow;
-		    color: $darkGray;
-		    font-size: 20px;
-		    height: 40px;
-		    cursor: pointer;
+			@include flex;
+			@include align-center;
+			background-color: $baseYellow;
+			color: $darkGray;
+			font-size: 20px;
+			height: 40px;
+			cursor: pointer;
 
 			&:focus {
 				outline: none;
@@ -233,10 +205,117 @@ md-menu-content {
 
 			.back-button-container {
 				display: -webkit-box;
-			    display: -webkit-flex;
-			    display: -ms-flexbox;
-			    display: flex;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
 				margin: 15px;
+			}
+		}
+
+		.back-details {
+			font-size: 16px;
+
+			.date-picker-container {
+				border-bottom: 1px solid $gray;
+				text-align: center;
+				width: 100%;
+				padding: 7px 0px 7px 0px;
+
+				.date-picker {
+					margin: 5px;
+					border: 0;
+					padding: 5px;
+					border-bottom: 1px solid $lightGray;
+					color: $darkGray;
+					text-align: center;
+					background: $lightGray;
+
+					&:focus {
+						outline: none;
+						border-bottom: 2px solid $baseGreen;
+					}
+				}
+			}
+			
+
+			.days-container {
+				@include flex;
+				@include justify-center;
+				@include align-baseline;
+				border-bottom: 1px solid $gray;
+				width: 100%;
+				padding: 10px;
+
+				.days-number {
+					margin-right: 5px;
+					font-size: 26px;
+					color: $baseGreen;
+				}
+			}
+
+			.total-amount-container {
+				@include flex;
+				@include justify-center;
+				@include align-baseline;
+				border-bottom: 1px solid $gray;
+				width: 100%;
+				padding: 10px;
+
+				.total-amount-value {
+					margin-right: 5px;
+					font-size: 26px;
+					color: $baseGreen;
+				}
+			}
+
+			.discount-container {
+				@include flex;
+				@include justify-center;
+				@include align-baseline;
+				border-bottom: 1px solid $gray;
+				width: 100%;
+				padding: 10px;
+
+				.discount-value {
+					margin-right: 5px;
+					font-size: 26px;
+					color: $baseGreen;
+				}
+			}
+
+			.rent-button {
+				@include flex;
+				@include align-center;
+				font-size: 18px;
+				background: $baseGreen;
+				color: $lightGray;
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+				border-radius: 0px;
+				height: 50px;
+				position: absolute;
+				bottom: 0;
+
+				.rent-button-icon {
+				    background-color: $darkGray;
+				    color: #f1f1f1;
+				    float: left;
+				    height: 50px;
+				    width: 50px;
+				    font-size: 24px;
+				    display: flex;
+				    align-items: center;
+				    justify-content: center;
+				}
+
+				.rent-button-label {
+					margin: 0 auto;
+				}
+
+				.md-ripple-container {
+					border-radius: 0px;
+				}
 			}
 		}
 	}
