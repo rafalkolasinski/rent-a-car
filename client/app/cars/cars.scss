@@ -1,3 +1,22 @@
+/* angular-material styles
+------------------------------------------------------------*/
+.list-user-panel {
+	@include flex;
+	@include justify-space-between;
+
+	.user-panel-search {
+		width: 75%;
+	}
+}
+
+.daterangepicker {
+	color: #121212;
+}
+
+.md-button {
+	border-radius: 0px;
+}
+
 md-menu-content {
 	max-height: none !important;
 	min-height: 400px;
@@ -7,11 +26,71 @@ md-menu-content {
 	}
 }
 
-.daterangepicker {
-	color: #121212;
+.md-toolbar-tools {
+	background-color: $baseGreen !important;
+	color: $lightGray !important;
+	text-transform: uppercase;
+}
+
+.payment-container {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+
+	.payment-details {
+		margin: 20px 0px 20px 0px;
+
+		.payment-row {
+			@include flex;
+			@include justify-space-between;
+			min-width: 300px;
+
+			.value-row {
+				padding-left: 40px;
+			}
+		}
+
+		.details-label {
+			color: $baseGreen;
+		}
+	}
+}
+
+/* app styles
+------------------------------------------------------------*/
+.basic-button {
+    font-family: 'Open Sans', sans-serif !important;
+    color: #1dcb8b !important;
+    border: 1px solid #1dcb8b !important;
+	transition: .25s all ease !important;
+	border-radius: 0px !important;
+
+	&:hover {
+		color: $baseGrayBlue !important;
+		background-color: $baseGreen !important;
+	}
+
+	&.payment-button {
+
+		&:hover {
+			color: $lightGray !important;
+		}
+	}
+
+	&.cancel-button,
+	&.cancel-button:focus {
+		border: 1px solid $mediumGray !important;
+		color: $mediumGray !important;
+		background-color: white;
+
+		&:hover {
+			color: $lightGray !important;
+			background-color: $mediumGray !important;
+		}
+	}
 }
 
 .account-container {
+	width: 100%;
 
 	.account-input {
 		margin: 20px;
@@ -19,6 +98,7 @@ md-menu-content {
 		border-bottom: 2px solid $lightGray !important;
 		color: $lightGray;
 		font-size: 16px;
+		box-shadow: none !important;
 
 		&:active,
 		&:focus {
@@ -125,10 +205,13 @@ md-menu-content {
 			}
 
 			.car-details-item {
+				@include flex;
+				@include justify-space-between;
 				padding: 10px 0px 10px 0px;
 				margin: 0px;
 
 				.car-details-item-label {
+					color: $darkGray;
 					font-weight: bold;
 				}
 			}
@@ -222,13 +305,15 @@ md-menu-content {
 				padding: 7px 0px 7px 0px;
 
 				.date-picker {
-					margin: 5px;
 					border: 0;
 					padding: 5px;
+					margin: 5px 0px 6px 0px;
 					border-bottom: 1px solid $lightGray;
 					color: $darkGray;
 					text-align: center;
 					background: $lightGray;
+					border: 0;
+				    width: 100%;
 
 					&:focus {
 						outline: none;

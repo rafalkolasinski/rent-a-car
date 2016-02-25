@@ -3,10 +3,17 @@
 <div class="container">
 	<div class="row">
 
-		<!-- sorting panel -->
-		<div>
+		<!-- car list user panel -->
+		<div class="col-md-11 col-sm-12 col-xs-12 list-user-panel">
+			<!-- searching panel -->
+			<md-input-container class="md-block account-container user-panel-search">
+	            <label>Search for keywords</label>
+	            <input type="text" class="form-control account-input" ng-model="keywords">
+	    	</md-input-container>
+
+			<!-- sorting panel -->
 			<md-menu>
-				<md-button ng-click="openSortingMenu($mdOpenMenu, $event)">
+				<md-button class="basic-button" ng-click="openSortingMenu($mdOpenMenu, $event)">
 					Sorting options
 				</md-button>
 				<md-menu-content width="4">
@@ -53,12 +60,6 @@
 				</md-menu-content>
 			</md-menu>
 		</div>
-
-		<!-- searching panel -->
-		<md-input-container class="md-block account-container">
-            <label>Search for keywords</label>
-            <input type="text" class="form-control account-input" ng-model="keywords">
-    	</md-input-container>
 
 		<!-- login monit -->
 		<div class="col-md-12 col-sm-12 col-sx-12" ng-if="!isLoggedIn">
@@ -141,11 +142,14 @@
 							<span class="days-label">days</span>
 						</div>
 						<div class="total-amount-container">
-							<span class="total-amount-value">$20</span>
+							<span class="total-amount-value">
+								<span ng-if="totalValue === 0">--</span>
+								<span ng-if="totalValue !== 0">${{totalValue}}</span>
+							</span>
 							<span class="total-amount-label">total</span>
 						</div>
 						<div class="discount-container" ng-if="discount !== 0">
-							<span class="discount-value">{{discount*100}}%</span>
+							<span class="discount-value">*{{discount*100}}%</span>
 							<span>&nbsp;discount</span>
 						</div>
 						<md-button class="rent-button" ng-click="rentCar($event)">

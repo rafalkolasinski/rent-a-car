@@ -128,6 +128,38 @@
 	    -ms-flex-pack: center;
 		justify-content: center;
 
+		.button-login {
+
+			&.button-main {
+				border: 1px solid $baseGreen;
+				background: none;
+
+				.button-label > a {
+					color: $baseGreen;
+				}
+
+				&:hover {
+					color: $baseGreen;
+				}
+				
+				&.signup {
+
+					&:before {
+						font-family: 'Material Icons';
+						content: "\e7fe";
+					}
+				}
+
+				&.login {
+
+					&:before {
+						font-family: 'Material Icons';
+						content: "\e7fd";
+					}
+				}
+			}
+		}
+
 		&:focus {
 			outline: none;
 		}

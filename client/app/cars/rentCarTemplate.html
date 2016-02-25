@@ -1,0 +1,55 @@
+<md-dialog>
+	<form>
+		<md-toolbar ng-class="dialog-toolbar">
+			<div class="md-toolbar-tools">
+				<h2>{{mdCarData.brand}} {{mdCarData.model}} - payment details</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="cancel()">
+					<md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+		<md-dialog-content class="payment-container">
+			<md-content class="md-padding">
+				<span>Please confirm payment details.</span>
+
+				<div class="payment-details">
+						<div class="payment-row">
+							<span class="label-row"><span class="details-label">First name: </span></span>
+							<span class="value-row"><span>{{mdUserData.firstName}}</span></span>
+						</div>
+						<div class="payment-row">
+							<span class="label-row"><span class="details-label">Last name: </span></span>
+							<span class="value-row"><span>{{mdUserData.lastName}}</span></span>
+						</div>
+						<div class="payment-row">
+							<span class="label-row"><span class="details-label">Brand: </span></span>
+							<span class="value-row"><span>{{mdCarData.brand}}</span></span>
+						</div>
+						<div class="payment-row">
+							<span class="label-row"><span class="details-label">Model: </span></span>
+							<span class="value-row"><span>{{mdCarData.model}}</span></span>
+						</div>
+						<div class="payment-row">
+							<span class="label-row"><span class="details-label">Time range: </span></span>
+							<span class="value-row"><span>{{mdDateData.days}} days</span></span>
+						</div>
+						<div class="payment-row">
+							<span class="label-row"><span class="details-label">Total: </span></span>
+							<span class="value-row"><span>${{mdTotalValue}}</span></span>
+						</div>
+				</div>
+
+				<span>You'll be redirected to DotPay page by clicking 'Confirm & pay' button.</span>
+			</md-content>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<md-button class="basic-button payment-button" ng-click="answer('not useful')">
+				Confirm & pay
+			</md-button>
+			<md-button class="basic-button cancel-button" ng-click="cancel()">
+				Cancel
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

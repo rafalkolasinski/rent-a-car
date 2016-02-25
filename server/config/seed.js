@@ -367,7 +367,7 @@ User.find({}).removeAsync()
 				lastName: 'Lastname',
 				email: 'test@test.com',
 				password: 'test',
-				monthlyRentCounter: 0
+				monthlyRentCounter: 3
 			},
 			{
 				provider: 'local',
