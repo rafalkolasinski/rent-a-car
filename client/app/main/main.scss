@@ -141,7 +141,7 @@
 				&:hover {
 					color: $baseGreen;
 				}
-				
+
 				&.signup {
 
 					&:before {
@@ -158,10 +158,10 @@
 					}
 				}
 			}
-		}
-
-		&:focus {
-			outline: none;
+			
+			&:focus {
+				outline: none;
+			}
 		}
 
 		.button-label {
