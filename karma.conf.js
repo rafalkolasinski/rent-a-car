@@ -30,6 +30,7 @@ module.exports = function(config) {
       'client/bower_components/moment/moment.js',
       'client/bower_components/bootstrap-daterangepicker/daterangepicker.js',
       'client/bower_components/angular-daterangepicker/js/angular-daterangepicker.js',
+      'client/bower_components/js-sha256/src/sha256.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',

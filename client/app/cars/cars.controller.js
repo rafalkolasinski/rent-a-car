@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rentAcarApp')
-  .controller('CarsCtrl', ['$scope', '$http', '$mdDialog', 'Auth', function ($scope, $http, $mdDialog, Auth) {
+  .controller('CarsCtrl', ['$scope', '$http', '$mdDialog', 'Auth', 'dotpay', function ($scope, $http, $mdDialog, Auth, dotpay) {
     $scope.sortingAttribute     = '';
     $scope.sortingReverse       = true;
     $scope.isLoggedIn           = false;
