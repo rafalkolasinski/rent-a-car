@@ -21,7 +21,8 @@ Car.find({}).removeAsync()
 			  seating: 2,
 			  price: 110,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Citroen',
@@ -32,7 +33,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 25,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Toyota',
@@ -43,7 +45,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 35,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Ford',
@@ -54,7 +57,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 25,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Volkswagen',
@@ -65,7 +69,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 40,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Volkswagen',
@@ -76,7 +81,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 40,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mercedes-Benz',
@@ -87,7 +93,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 50,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mercedes-Benz',
@@ -98,7 +105,8 @@ Car.find({}).removeAsync()
 			  seating: 2,
 			  price: 90,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mercedes-Benz',
@@ -109,7 +117,8 @@ Car.find({}).removeAsync()
 			  seating: 4,
 			  price: 60,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mercedes-Benz',
@@ -120,7 +129,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 55,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mercedes-Benz',
@@ -131,7 +141,8 @@ Car.find({}).removeAsync()
 			  seating: 2,
 			  price: 60,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mercedes-Benz',
@@ -142,7 +153,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 55,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Volvo',
@@ -153,7 +165,8 @@ Car.find({}).removeAsync()
 			  seating: 7,
 			  price: 55,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mazda',
@@ -164,7 +177,8 @@ Car.find({}).removeAsync()
 			  seating: 7,
 			  price: 55,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mazda',
@@ -175,7 +189,8 @@ Car.find({}).removeAsync()
 			  seating: 2,
 			  price: 60,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mazda',
@@ -186,7 +201,8 @@ Car.find({}).removeAsync()
 			  seating: 7,
 			  price: 50,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mitsubishi',
@@ -197,7 +213,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 70,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mitsubishi',
@@ -208,7 +225,8 @@ Car.find({}).removeAsync()
 			  seating: 7,
 			  price: 65,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mitsubishi',
@@ -219,7 +237,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 65,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Mitsubishi',
@@ -230,7 +249,8 @@ Car.find({}).removeAsync()
 			  seating: 7,
 			  price: 65,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'BMW',
@@ -241,7 +261,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 60,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'BMW',
@@ -252,7 +273,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 60,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'BMW',
@@ -263,7 +285,8 @@ Car.find({}).removeAsync()
 			  seating: 4,
 			  price: 65,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'BMW',
@@ -274,7 +297,8 @@ Car.find({}).removeAsync()
 			  seating: 4,
 			  price: 75,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'BMW',
@@ -285,7 +309,8 @@ Car.find({}).removeAsync()
 			  seating: 7,
 			  price: 70,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'BMW',
@@ -296,7 +321,8 @@ Car.find({}).removeAsync()
 			  seating: 4,
 			  price: 75,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Audi',
@@ -307,7 +333,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 75,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Audi',
@@ -318,7 +345,8 @@ Car.find({}).removeAsync()
 			  seating: 7,
 			  price: 75,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Audi',
@@ -329,7 +357,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 80,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Audi',
@@ -340,7 +369,8 @@ Car.find({}).removeAsync()
 			  seating: 5,
 			  price: 85,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			},
 			{
 				brand: 'Audi',
@@ -351,7 +381,8 @@ Car.find({}).removeAsync()
 			  seating: 2,
 			  price: 100,
 			  isBooked: false,
-			  isAvailable: true
+			  isAvailable: true,
+			  bookingDate: ''
 			}
 
 		);
@@ -367,7 +398,7 @@ User.find({}).removeAsync()
 				lastName: 'Lastname',
 				email: 'test@test.com',
 				password: 'test',
-				monthlyRentCounter: 3
+				monthlyRentCounter: 0
 			},
 			{
 				provider: 'local',

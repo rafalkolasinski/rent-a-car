@@ -12,7 +12,8 @@ var CarSchema = new Schema({
   seating: Number,
   price: { type: Number, min: 0.01, max: 200 },
   isBooked: Boolean,
-  isAvailable: Boolean
+  isAvailable: Boolean,
+  bookingDate: Date
 });
 
 module.exports = mongoose.model('Car', CarSchema);

@@ -1,3 +1,5 @@
+'use strict';
+
 class CarRenting {
 	var carId = '';
 	var carsService;
@@ -5,7 +7,7 @@ class CarRenting {
 	function completePurchase(carsService, carId, Payment payment) {
 		this._carId = carId;
 		if(payment.isFinished()) {
-			carsService = rentCar //metoda blokujaca
+			carsService = rentCar() //metoda blokujaca
 		}
 	}
 }
