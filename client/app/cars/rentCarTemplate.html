@@ -44,7 +44,7 @@
 			</md-content>
 		</md-dialog-content>
 		<md-dialog-actions layout="row">
-			<md-button class="basic-button payment-button" ng-click="answer('not useful')" ng-href="https://ssl.dotpay.pl/test_payment/?id=716372&amount={{mdTotalValue}}&description=Car+rental+payment+-+{{mdCarData.brand}}+{{mdCarData.model}}&URL={{mdHostName}}/payment&URLC=&firstname={{mdUserData.firstName}}&lastname={{mdUserData.lastName}}&email={{mdUserData.email}}&type=3&api_version=dev">
+			<md-button class="basic-button payment-button" ng-click="answer('not useful')" ng-href="https://ssl.dotpay.pl/test_payment/?id=716372&amount={{mdTotalValue}}&description=Car+rental+payment+-+{{mdCarData.brand}}+{{mdCarData.model}}&URL={{mdHostName}}/payment&URLC={{mdHostName}}/payment&firstname={{mdUserData.firstName}}&lastname={{mdUserData.lastName}}&email={{mdUserData.email}}&type=3&api_version=dev">
 				Confirm & pay
 			</md-button>
 			<md-button class="basic-button cancel-button" ng-click="cancel()">
