@@ -17,7 +17,7 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css({.tmp,client}) app/app.css -->
-  <link rel="stylesheet" href="app/app.css">
+  <link rel="stylesheet" href="app/app.css" ng-if="window.location.href.indexOf("localhost") < 0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -89,6 +89,8 @@
     <script src="app/dotpay/dotpay.service.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
+    <script src="app/payment/payment.controller.js"></script>
+    <script src="app/payment/payment.js"></script>
     <script src="components/auth/auth.service.js"></script>
     <script src="components/auth/user.service.js"></script>
     <script src="components/footer/footer.directive.js"></script>

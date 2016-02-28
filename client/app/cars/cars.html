@@ -152,7 +152,7 @@
 							<span class="discount-value">*{{discount*100}}%</span>
 							<span>&nbsp;discount</span>
 						</div>
-						<md-button class="rent-button" ng-click="rentCar($event)">
+						<md-button class="rent-button" ng-click="rentCar($event)" ng-disabled="datePicker.days == 0">
 							<div class="rent-button-icon"><i class="fa fa-usd"></i></div>
 							<span class="rent-button-label">Rent</span>
 						</md-button>

@@ -3,6 +3,7 @@
 angular.module('rentAcarApp')
   .controller('CarsCtrl', ['$scope', '$http', '$mdDialog', 'Auth', 'dotpay', function ($scope, $http, $mdDialog, Auth, dotpay) {
     $scope.sortingAttribute     = '';
+    $scope.hostName             = '';
     $scope.sortingReverse       = true;
     $scope.isLoggedIn           = false;
     $scope.totalValue           = 0;
@@ -66,6 +67,9 @@ angular.module('rentAcarApp')
       console.log($scope.datePicker);
       console.log("Is booked before locking: " + targetData.isBooked);
 
+      $scope.hostName = window.location.host;
+      console.log($scope.hostName);
+      
       $mdDialog.show({
         controller: DialogController,
         templateUrl: 'app/cars/rentCarTemplate.html',
@@ -73,12 +77,14 @@ angular.module('rentAcarApp')
         targetEvent: event,
         clickOutsideToClose:true,
         locals: {
-          userData: $scope.userData,
-          carData: $scope.selectedCarData,
-          dateData: $scope.datePicker,
-          totalValue: $scope.totalValue
+          userData:   $scope.userData,
+          carData:    $scope.selectedCarData,
+          dateData:   $scope.datePicker,
+          totalValue: $scope.totalValue,
+          hostName:   $scope.hostName
         }
       })
+
 
       // if(!targetData.isBooked){
       //  targetData.isBooked = true;
@@ -210,11 +216,12 @@ angular.module('rentAcarApp')
 
   /* angular-material functions
   -----------------------------------------------------*/
-  var DialogController = function($scope, $mdDialog, userData, carData, dateData, totalValue) {
+  var DialogController = function($scope, $mdDialog, userData, carData, dateData, totalValue, hostName) {
     $scope.mdCarData = carData;
     $scope.mdUserData = userData;
     $scope.mdDateData = dateData;
     $scope.mdTotalValue = totalValue;
+    $scope.mdHostName = hostName;
     console.log("Dialog car data: " + $scope.mdCarData);
     console.log("Dialog user data: " + $scope.mdUserData);
 

@@ -1,3 +1,7 @@
+.footer {
+	margin-top: 50px !important;
+}
+
 footer.footer {
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
@@ -62,6 +66,23 @@ footer.footer {
 							text-decoration: none;
 						}
 				    }
+				}
+			}
+
+			.footer-logo {
+				@include flex;
+				@include align-center;
+				@include justify-center;
+				@include direction-column;
+
+				.footer-logo-icon {
+					font-size: 75px;
+					color: $lightGray;
+				}
+
+				.footer-logo-label {
+					margin-top: 10px;
+					font-size: 16px;
 				}
 			}
 		}

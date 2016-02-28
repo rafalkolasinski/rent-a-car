@@ -7957,6 +7957,9 @@ md-menu-content {
   .app-jumbo-R {
     width: 100%;
     float: none; } }
+.footer {
+  margin-top: 50px !important; }
+
 footer.footer {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
@@ -8019,6 +8022,30 @@ footer.footer {
           .footer-container .footer-container-row .footer-column .footer-list.text-list .text-list-item:hover > a {
             color: #fdd835 !important;
             text-decoration: none; }
+    .footer-container .footer-container-row .footer-column .footer-logo {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .footer-container .footer-container-row .footer-column .footer-logo .footer-logo-icon {
+        font-size: 75px;
+        color: #f1f1f1; }
+      .footer-container .footer-container-row .footer-column .footer-logo .footer-logo-label {
+        margin-top: 10px;
+        font-size: 16px; }
 
 .modal-primary .modal-header,
 .modal-info .modal-header,
